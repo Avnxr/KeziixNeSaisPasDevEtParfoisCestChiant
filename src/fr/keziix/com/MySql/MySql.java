@@ -1,10 +1,10 @@
-package fr.keziix.com;
+package fr.keziix.com.MySql;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Connection;
 
-public class SqlMaisLautre
+public class MySql
 {
     private Connection conn;
 
@@ -12,6 +12,7 @@ public class SqlMaisLautre
         if(!isConnected()) {
             try {
                 conn = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/" + database, user, password);
+                System.out.println("Connected ! ["+host+":"+port+"]");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
